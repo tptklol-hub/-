@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0c3876" /><title>Qoldau — Технические условия</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">K</div><div><b>Qoldau</b><small>Казахтелеком</small></div></div>
+      <nav class="nav" aria-label="Основная навигация">
+        <button class="nav-item active" data-view="overview"><span>▦</span>Обзор</button>
+        <button class="nav-item" data-view="requests"><span>▤</span>Заявки <em id="new-count">3</em></button>
+        <button class="nav-item" data-view="registry"><span>▣</span>Реестр ТУ</button>
+        <button class="nav-item" data-view="map"><span>⌖</span>Карта инфраструктуры</button>
+        <button class="nav-item" data-view="reports"><span>◔</span>Отчёты</button>
+      </nav>
+      <div class="sidebar-bottom"><button class="nav-item" data-view="settings"><span>⚙</span>Настройки</button><div class="profile"><div class="avatar">АД</div><div><b>Алмазов Диас Олжазұлы</b><small>Специалист по ТУ</small></div><span>⌄</span></div></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><button class="mobile-menu" aria-label="Открыть меню">☰</button><div class="breadcrumbs" id="breadcrumbs">Рабочая область <span>/</span> Обзор</div><div class="top-actions"><button class="icon" id="theme-toggle" title="Тема">☾</button><button class="icon notification" title="Уведомления">♧<i></i></button><button class="primary compact" id="open-form">+ Новая заявка</button></div></header>
+      <div id="app"></div>
+    </main>
+  </div>
+  <dialog id="request-dialog"><form method="dialog" id="request-form"><div class="modal-head"><div><p class="overline">Подача заявки</p><h2>Новая заявка на ТУ</h2></div><button class="close" value="cancel">×</button></div><div class="form-grid">
+    <fieldset><legend>Данные компании</legend><label>Наименование компании<input required name="company" placeholder="ТОО «Название компании»" /></label><label>БИН<input required name="bin" inputmode="numeric" placeholder="123456789012" /></label><label>Контактное лицо<input required name="contact" placeholder="Имя и должность" /></label><label>Электронная почта<input required name="email" type="email" placeholder="info@company.kz" /></label></fieldset>
+    <fieldset><legend>Данные объекта</legend><label>Наименование объекта<input required name="object" placeholder="Жилой комплекс / объект" /></label><label>Регион<select required name="region"><option value="">Выберите регион</option><option>г. Алматы</option><option>Область Жетісу</option><option>г. Астана</option><option>Карагандинская область</option><option>Туркестанская область</option></select></label><label>Адрес объекта<input required name="address" placeholder="Улица, дом, населённый пункт" /></label><label>Тип работ<select required name="work"><option>Прокладка оптического кабеля</option><option>Использование кабельной канализации</option><option>Строительство ВОЛС</option><option>Подключение к телекоммуникационной сети</option><option>Размещение оборудования</option><option>Перенос существующих линий связи</option></select></label></fieldset>
+  </div><label class="upload">⌃ <span>Прикрепить документы</span><small>PDF, DOCX, XLSX, JPG или PNG</small><input name="files" type="file" multiple accept=".pdf,.docx,.xlsx,.jpg,.jpeg,.png" /></label><menu><button value="cancel" class="secondary">Отмена</button><button class="primary" value="default">Отправить заявку</button></menu></form></dialog>
+  <dialog id="detail-dialog"></dialog><div id="toast" role="status"></div><script src="app.js"></script>
+</body></html>
